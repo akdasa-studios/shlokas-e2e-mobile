@@ -1,1 +1,1 @@
-# shlokas-e2e-mobile
+Shlokas E2E tests for mobile
