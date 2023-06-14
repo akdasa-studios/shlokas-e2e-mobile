@@ -5,11 +5,9 @@ class DriverObj:
 
     @classmethod
     def create_driver(cls, config: dict):
-        try:
-            return webdriver.Remote(command_executor=config['command_executor'],
-                                    desired_capabilities=config['desired_capabilities'])
-        except:
-            return None
+        print("!!!! ", config)
+        return webdriver.Remote(command_executor=config['command_executor'],
+                                desired_capabilities=config['desired_capabilities'])
 
     # TODO написать метод корректного завершение теста.
     @classmethod

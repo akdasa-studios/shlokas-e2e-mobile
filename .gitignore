@@ -1,3 +1,5 @@
 .idea/
 *.apk
 __pycache__/
+*.pyc
+__pycache__
