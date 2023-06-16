@@ -6,6 +6,7 @@ from lib_config import config_01
 from appium.webdriver.common.appiumby import AppiumBy
 
 
+
 class BaseTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.driver = DriverObj.create_driver(config_01)
@@ -29,10 +30,18 @@ class BaseTestCase(unittest.TestCase):
         )
         return self._get_interactive(elelements)
 
+    def find_by_test_id(self, query: str):
+        selector = f'//*[@data-testid="{query}"]'
+        elelements = self.driver.find_elements(
+            by=AppiumBy.XPATH, value=selector
+        )
+        return self._get_interactive(elelements)
+
 
 
 
     def _get_interactive(self, elements: list):
+        print(">>> ", elements)
         interactive_el = None
         for el in elements:
             if el.is_enabled() and el.is_displayed():

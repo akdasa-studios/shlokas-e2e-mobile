@@ -7,7 +7,8 @@ desired_capabilities = capabilities = dict(
     appPackage='com.akdasa.shlokas',
     app=f'{CURRENT_PATH}/shlokas-main-54f8d1-debug.apk',
     language='en',
-    locale='US'
+    locale='US',
+    newCommandTimeout='100'
 )
 
 command_executor = 'http://localhost:4723'

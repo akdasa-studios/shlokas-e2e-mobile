@@ -1,3 +1,4 @@
+from time import sleep
 from unittest import main
 from base_test_case import BaseTestCase
 
@@ -18,9 +19,16 @@ class TestSignIn(BaseTestCase):
 
         submit = self.find_by_content("Sign")
         submit.click()
+        sleep(5)
 
         # Assert:
-        # TODO
+        self.find_by_test_id("settings-tab").click()
+        self.find_by_content("Account").click()
+
+        self.assertTrue(
+            self.find_by_content("Welcome")
+        )
+
 
 
 if __name__ == '__main__':
