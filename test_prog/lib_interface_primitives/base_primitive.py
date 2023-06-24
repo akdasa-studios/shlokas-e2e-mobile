@@ -1,12 +1,19 @@
-class InterfacePrimitive:
-    type_obj: str
-    key_flag: str
-    value_flag: str
+from appium.webdriver.common.appiumby import By
 
-    def set_primitive(self, type_obj: str = '', key_flag: str = '', value_flag: str = ''):
-        self.type_obj = type_obj
-        self.key_flag = key_flag
-        self.value_flag = value_flag
+
+class InterfacePrimitive:
+    key_str = None
+
+    @staticmethod
+    def _get_interactive(elements: list, key: str):
+        print(">>> ", elements)
+        interactive_el = None
+        for el in elements:
+            if el.is_enabled() and el.is_displayed():
+                interactive_el = el
+        if not interactive_el:
+            raise ValueError(f'Element {key} not found')
+        return interactive_el
 
 
 if __name__ == '__main__':

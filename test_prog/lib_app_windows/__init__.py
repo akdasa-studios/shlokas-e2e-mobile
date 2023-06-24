@@ -1,0 +1,5 @@
+from test_prog.lib_app_windows.start_registration import WinStartRegistration
+from test_prog.lib_app_windows.setting_registration_by_emeil import RegistrationByEmail
+from test_prog.lib_app_windows.start_popup_training import PopUpTraining
+from test_prog.lib_app_windows.setting import WindowSetting, SubMenuAccount
+from test_prog.lib_app_windows.library import WindowLibrary

@@ -1,8 +1,8 @@
-from test_prog.lib_classes.cls_test_methods import TestMethods
+import unittest
 from test_prog.lib_classes.cls_driver import BaseDriver
 
 
-class BaseTest(TestMethods):
+class BaseTest(unittest.TestCase):
     def setUp(self) -> None:
         self.driver = BaseDriver.create_driver()
         self.driver.switch_to.context('WEBVIEW_com.akdasa.shlokas')
@@ -10,6 +10,9 @@ class BaseTest(TestMethods):
     def tearDown(self) -> None:
         if self.driver:
             self.driver.quit()
+
+    def get_driver(self):
+        return self.driver
 
 
 if __name__ == '__main__':
