@@ -1,2 +1,0 @@
-program for test apps shlokas. ver. 0.1
-
