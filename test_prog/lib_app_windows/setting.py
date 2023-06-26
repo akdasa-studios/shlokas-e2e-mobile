@@ -1,9 +1,9 @@
-from test_prog.lib_interface_primitives.xpath_primitives import ObjByXpath
+from test_prog.lib_interface_primitives.new_base_primitive import InterfacePrimitive as InPr, By
 
 
 class WindowSetting:
-    SLD_ACCOUNT = ObjByXpath(key='text', value='Account')
+    SLD_ACCOUNT = InPr(type_obj=By.XPATH, key='text', value='Account')
 
 
-class SubMenuAccount:
-    TXT_WELCOME = ObjByXpath(key='text', value='Welcome')
+class SubWinAccount:
+    TXT_WELCOME = InPr(type_obj=By.XPATH, key='text', value='Welcome')

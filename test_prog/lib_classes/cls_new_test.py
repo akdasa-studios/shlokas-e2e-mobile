@@ -1,10 +1,10 @@
 import unittest
-from test_prog.lib_classes.cls_driver import BaseDriver
+from test_prog.lib_classes.cls_new_driver import BaseDriver
 
 
 class BaseTest(unittest.TestCase):
     def setUp(self) -> None:
-        self.driver = BaseDriver.create_driver()
+        self.driver = BaseDriver()
         self.driver.switch_to.context('WEBVIEW_com.akdasa.shlokas')
 
     def tearDown(self) -> None:
